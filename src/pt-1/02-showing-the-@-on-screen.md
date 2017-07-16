@@ -13,6 +13,12 @@ extern crate pixset;
 
 `glium`, our OpenGL library, needs to create a window for us to draw on, and in order to do so it needs the size of the window to create, in pixels. Since we're using a tileset with 16x16 pixel tiles and want a window with a width of 80 tiles and height of 50 tiles, we'll need a window with 1,280 pixels wide and 800 pixels tall. The rest is just boilerplate to get things up and running. Ultimately all we care about is the `renderer` that we get from the last line. Note that we pass the renderer `pixset::TILESET`, which gives us the default tileset provided by the `pixset` crate. All of this code goes inside the `main` function.
 
+Right below all the `extern`s we'll import some names into our scope to reduce the typing we need to do:
+
+```rust
+use gltile::colors;
+use pixset::Pix;
+```
 
 ```rust
 let mut events_loop = glium::glutin::EventsLoop::new();
@@ -27,13 +33,13 @@ After we've got our renderer we'll make a tile for our hero, the `@` symbol:
 
 ```rust
 let tile = gltile::Tile::make(
-    *gltile::colors::WHITE,
-    *gltile::colors::BLACK,
-    pixset::Pix::Ampersand,
+    *colors::WHITE,
+    *colors::BLACK,
+    Pix::Ampersand,
 );
+```
 
 The first arguement to `Tile::make` is the foreground color, and the second arguement is the background color. Finally, the third argument is the symbol to use. /* TODO */ point to full listing of `pixset` tiles.
-```
 
 Then we'll set the 1st tile to the right, and the 1st tile down to our hero. Coordinates start from the top left corner and proceed to the right and down. We're passing in a tuple to denote the x and y coordinates.
 
