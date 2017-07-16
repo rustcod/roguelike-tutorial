@@ -11,14 +11,14 @@ extern crate looper;
 extern crate pixset;
 ```
 
-`glium`, our OpenGL library, needs to create a window for us to draw on, and in order to do so it needs the size of the window to create, in pixels. Since we're using a tileset with 16x16 pixel tiles and want a window with a width of 80 tiles and height of 50 tiles, we'll need a window with 1,280 pixels wide and 800 pixels tall. The rest is just boilerplate to get things up and running. Ultimately all we care about is the `renderer` that we get from the last line. Note that we pass the renderer `pixset::TILESET`, which gives us the default tileset provided by the `pixset` crate. All of this code goes inside the `main` function.
-
 Right below all the `extern`s we'll import some names into our scope to reduce the typing we need to do:
 
 ```rust
 use gltile::colors;
 use pixset::Pix;
 ```
+
+`glium`, our OpenGL library, needs to create a window for us to draw on, and in order to do so it needs the size of the window to create, in pixels. Since we're using a tileset with 16x16 pixel tiles and want a window with a width of 80 tiles and height of 50 tiles, we'll need a window with 1,280 pixels wide and 800 pixels tall. The rest is just boilerplate to get things up and running. Ultimately all we care about is the `renderer` that we get from the last line. Note that we pass the renderer `pixset::TILESET`, which gives us the default tileset provided by the `pixset` crate along with the `Empty` tile from that `TILESET` which the renderer uses to initialize a blank screen. All of this code goes inside the `main` function.
 
 ```rust
 let mut events_loop = glium::glutin::EventsLoop::new();
