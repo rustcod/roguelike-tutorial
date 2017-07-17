@@ -58,9 +58,9 @@ Add the following 3 lines after the `[dependencies]` heading in `Cargo.toml`:
 ```toml
 [dependencies]
 glium = "0.17.0"
-gltile = "0.0.4"
+gltile = "0.0.5"
 looper = "0.0.2"
-pixset = "0.0.4
+pixset = "0.0.6
 ```
 
 Now when you run your program again using `cargo run --release` you'll see it pull down the above crates, and their dependencies (and their dependencies dependencies...) and compile them all. It'll take a little bit, but you'll only need to do a full compilation when your dependencies change. That is all that is needed for setup. Easy, right?

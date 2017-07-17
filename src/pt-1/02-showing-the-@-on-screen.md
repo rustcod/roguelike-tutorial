@@ -32,11 +32,7 @@ After we've got our renderer we'll make a tile for our hero, the `@` symbol:
 
 
 ```rust
-let tile = gltile::Tile::make(
-    *colors::WHITE,
-    *colors::BLACK,
-    Pix::Ampersand,
-);
+let tile = gltile::Tile::make(*colors::WHITE, *colors::BLACK, Pix::At);
 ```
 
 The first arguement to `Tile::make` is the foreground color, and the second arguement is the background color. Finally, the third argument is the symbol to use. /* TODO */ point to full listing of `pixset` tiles.
