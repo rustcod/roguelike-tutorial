@@ -25,7 +25,7 @@ let mut events_loop = glium::glutin::EventsLoop::new();
 let window = glium::glutin::WindowBuilder::new().with_dimensions(1_280, 800);
 let context = glium::glutin::ContextBuilder::new();
 let display = glium::Display::new(window, context, &events_loop).unwrap();
-let mut renderer = gltile::Renderer::new(&display, pixset::TILESET, pixset::Pix::Empty);
+let mut renderer = gltile::Renderer::new(&display, &pixset::TILESET);
 ```
 
 After we've got our renderer we'll make a tile for our hero, the `@` symbol:
